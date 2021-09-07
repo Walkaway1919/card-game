@@ -6,12 +6,11 @@
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr; 
     grid-template-rows: 1fr 1fr 1fr 1fr; 
     gap: 15px 20px; 
-    grid-template-areas: 
-      ". . . . ."
-      ". . . . ."
-      ". . . . ."
-      ". . . . ."; 
     align-items: end; 
     height: 78%; 
     width: 85%;
+    @media (max-width: 1200px) {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr 1fr 1fr; 
+    }
 }
