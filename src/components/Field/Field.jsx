@@ -38,7 +38,11 @@ export const Field = (classname) => {
 
     const [gameCards, setGameCards] = useState( [] )
 
-    const onClickCard = (openedCardId, openedCardKey) => () => {
+    const onClickCard = (openedCardId, openedCardKey) => (e) => {
+        if(gameContext.openedCards.length === 2){
+            e.preventDefault()
+            return 
+        }
         if( !gameContext.cards.length && !gameContext.openedCards.length ){
             setGameContext.setGameStart( Date.now() )
         }
