@@ -3,6 +3,7 @@ import { ThemeContext } from '../../App'
 import { useContext } from "react";
 import { Toggler } from "./Toggler/Toggler";
 import './Header.scss';
+import StartButton from "./StartButton/StartButton";
 
 
 
@@ -10,8 +11,8 @@ export const Header = () => {
     const {theme, setTheme} = useContext(ThemeContext)
     const changeTheme = () => theme === "dark" ? setTheme("light") : setTheme("dark");
     return <div className="header">
-        <button>Начать</button>
-        <Toggler/>
         <Score/>
+        <StartButton/>
+        <Toggler/>
     </div>
 }

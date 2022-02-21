@@ -1,24 +1,33 @@
 import cn from 'classnames'
-import { GameContext, ThemeContext } from '../../App'
-import { useContext, useState } from 'react'
+import { ThemeContext, CardsContext } from '../../App'
+import { useContext } from 'react'
 import './Card.scss'
 
-export const Card = ({ classname, id, image, description, onClick }) => {
-    const {theme, setTheme} = useContext(ThemeContext)
-    const [{cards, openedCards}] = useContext( GameContext )
-    const isOpened = cards.includes( id ) || openedCards.includes( id )
+export const Card = ({ classname, id, main, image, description, onClick }) => {
+    const {theme} = useContext(ThemeContext)
+    const {game: {matched, openedKeys}} = useContext( CardsContext )
+    const isOpened = matched.includes( main ) || openedKeys.includes( id )
 
-    return <div className={cn( classname, 'card', { ["card--opened"]: isOpened })} onClick={onClick}>
-        <div className={ theme === "light" ? 'card__backside--light' : 'card__backside--dark' }></div>
-        <div className={theme === "light" ? 'card__frontside--light' : 'card__frontside--dark'}>
+    return <div className={cn( classname, 'card', { "card--opened": isOpened })} onClick={onClick}>
+        <div className={ cn(
+            'card__backside',
+            {
+                'card__backside--light': theme === "light",
+                'card__backside--dark': theme !== "light",
+            }
+        ) }></div>
+        <div className={
+            cn(
+                'card__frontside',
+                {
+                    'card__frontside--light': theme === "light",
+                    'card__frontside--dark': theme !== "light",
+                }
+            )
+        }>
             <img src={image} alt={description} />
+            <div className='tooltip'>{description}</div>
         </div>
     </div>
 }
 
-// return <div className={cn( classname, 'card', { ["card--opened"]: isOpened })} onClick={onClick}>
-// <div className="card__backside"></div>
-// <div className="card__frontside">
-//     <img src={image} alt={description} />
-// </div>
-// </div>

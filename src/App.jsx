@@ -1,36 +1,36 @@
 import { Header } from './components/Header/Header'
 import { Field }  from './components/Field/Field'
+import cn from 'classnames';
 import React, { useState } from 'react';
 import './App.scss';
 import "./styles/reset.css";
-import {Score} from './components/Header/Score/Score.jsx'
-import { Footer } from './components/Footer/Footer';
 
-const defaultContext = {
-  ratingTable: [],
-  gameStart: null,
-  openedCards: [],
-}
-export const GameContext = React.createContext();
-export const ThemeContext = React.createContext()
+export const ThemeContext = React.createContext();
+export const CardsContext = React.createContext();
 
 function App() {
 
-  const [cards, setCards] = useState( [] ) 
-  const [openedCards, setOpenedCards] = useState( [] ) 
-  const [comparedCards, setComparedCards] = useState( [] ) 
-  const [gameStart, setGameStart] = useState( null ) 
+  const [game, setGame] = useState({
+    matched: [],
+    opened: null,
+    openedKeys: [],
+    start: null,
+    end: null,
+  });
 
   const [theme, setTheme] = useState("light")
 
   return (
-    <div className={ theme === "light" ? 'memory--light' : 'memory--dark' }>
+    <div className={cn(
+      "memory",
+      { "memory--light": theme === "light" },
+      { "memory--dark": theme !== "light" }
+    )}>       
       <ThemeContext.Provider value={{theme, setTheme}}>
-      <GameContext.Provider value={ [ {cards, openedCards, comparedCards, gameStart}, {setCards, setOpenedCards, setComparedCards, setGameStart} ] } >
-        <Header />
-        <Field />
-        <Footer/>
-      </GameContext.Provider>
+        <CardsContext.Provider value={{game, setGame}}>
+            <Header />
+            <Field />
+        </CardsContext.Provider>
       </ThemeContext.Provider>
     </div>
   );

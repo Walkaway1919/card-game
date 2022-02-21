@@ -8,11 +8,18 @@ label {
 	cursor: pointer;
 	width: 50px;
 	height: 22px;
-    border: solid grey 1px;
+    border: solid var(--dark) 2px;
 	display: block;
 	border-radius: 100px;
 	position: relative;
-    
+	@media (max-width:600px) {  
+        width: 35px;
+		height: 18px;
+    }
+	@media (max-width:600px) {  
+        width: 35px;
+		height: 14px;
+    }
 }
 
 label:after {
@@ -22,17 +29,25 @@ label:after {
 	left: 1px;
 	width: 20px;
 	height: 20px;
-    background: linear-gradient(45deg, rgb(126, 133, 132) 27%, rgb(255, 255, 255) 100%);
-	
+	background: var(--primary);
 	border-radius: 90px;
 	transition: 0.3s;
+	@media (max-width:600px) {
+		height: 16px;
+		width: 16px;
+    }
+	@media (max-width:600px) {
+		height: 12px;
+		width: 12px;
+    }
 }
 
 input:checked + label {
-	background: #fff;
+	background: var(--primary--dark);
+	border: solid var(--white) 2px;
 }
 input:checked + label::after {
-    background: linear-gradient(45deg, rgb(253, 255, 255), rgb(0, 0, 0) 82%);
+    background: var(--white);
 	
 }
 
@@ -44,5 +59,3 @@ input:checked + label:after {
 label:active:after {
 	width: 20px;
 }
-
-// centering

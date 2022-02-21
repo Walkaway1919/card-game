@@ -1,6 +1,31 @@
 .header{
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
+    @media (max-width:500px) { 
+        transition: all 0.3s;
+        display: grid; 
+        grid-template-columns: auto 1fr; 
+        grid-template-rows: 2fr 1fr; 
+        gap: 0px 0px; 
+        justify-items: center;
+        grid-template-areas: 
+            "button toggler"
+            "time time"; 
+        
+        .button { 
+            grid-area: button;
+            align-self: end;
+            justify-self: start; 
+        }
+        .time { 
+            grid-area: time;
+        }
+        .toggler { 
+            grid-area: toggler; 
+            align-self: center;
+            justify-self: end;
+        }
+    }
 }
