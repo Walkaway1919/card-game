@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/card-game/static/css/main.d1893d78.chunk.css",
+    "main.js": "/card-game/static/js/main.27878402.chunk.js",
+    "main.js.map": "/card-game/static/js/main.27878402.chunk.js.map",
+    "runtime-main.js": "/card-game/static/js/runtime-main.34661da4.js",
+    "runtime-main.js.map": "/card-game/static/js/runtime-main.34661da4.js.map",
+    "static/js/2.81866210.chunk.js": "/card-game/static/js/2.81866210.chunk.js",
+    "static/js/2.81866210.chunk.js.map": "/card-game/static/js/2.81866210.chunk.js.map",
+    "static/js/3.fab75416.chunk.js": "/card-game/static/js/3.fab75416.chunk.js",
+    "static/js/3.fab75416.chunk.js.map": "/card-game/static/js/3.fab75416.chunk.js.map",
+    "index.html": "/card-game/index.html",
+    "static/css/main.d1893d78.chunk.css.map": "/card-game/static/css/main.d1893d78.chunk.css.map",
+    "static/js/2.81866210.chunk.js.LICENSE.txt": "/card-game/static/js/2.81866210.chunk.js.LICENSE.txt",
+    "static/media/Card.scss": "/card-game/static/media/back.c55ef5bf.png",
+    "static/media/epidexipteryx.6f5e2dfd.png": "/card-game/static/media/epidexipteryx.6f5e2dfd.png",
+    "static/media/monoclonius.dbd636f1.png": "/card-game/static/media/monoclonius.dbd636f1.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.34661da4.js",
+    "static/js/2.81866210.chunk.js",
+    "static/css/main.d1893d78.chunk.css",
+    "static/js/main.27878402.chunk.js"
+  ]
+}
